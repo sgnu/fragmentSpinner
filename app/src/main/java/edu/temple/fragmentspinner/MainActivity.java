@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     Spinner spinner;
     String[] colors;
+    String[] colorCodes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         spinner = findViewById(R.id.spinner);
         colors = getResources().getStringArray(R.array.colors);
-        final ColorAdapter adapter = new ColorAdapter(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, colors);
+        colorCodes = getResources().getStringArray(R.array.colorCodes);
+        final ColorAdapter adapter = new ColorAdapter(MainActivity.this, android.R.layout.simple_spinner_dropdown_item, colors, colorCodes);
         spinner.setAdapter(adapter);
         spinner.setSelection(0, false);
 
@@ -45,10 +47,12 @@ public class MainActivity extends AppCompatActivity {
     public class ColorAdapter extends BaseAdapter {
         private Context context;
         private String[] objects;
+        private String[] colorCodes;
 
-        public ColorAdapter(Context context, int textViewResourceId, String[] objects) {
+        public ColorAdapter(Context context, int textViewResourceId, String[] objects, String[] colorCodes) {
             this.context = context;
             this.objects = objects;
+            this.colorCodes = colorCodes;
         }
 
         @Override
@@ -62,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public int getColor(int position) {
-            return Color.parseColor((String) getItem(position));
+            return Color.parseColor(colorCodes[position]);
         }
 
         @Override
@@ -75,11 +79,12 @@ public class MainActivity extends AppCompatActivity {
             if (convertView == null) {
                 convertView = LayoutInflater.from(context).inflate(R.layout.spinnerlayout, parent, false);
             }
-            String currentItem = (String) getItem(position);
+            String colorName = (String) getItem(position);
+            int color = getColor(position);
 
             TextView textViewItemName = convertView.findViewById(R.id.text_view_item_name);
-            textViewItemName.setText(currentItem);
-            textViewItemName.setBackgroundColor(Color.parseColor(currentItem));
+            textViewItemName.setText(colorName);
+            textViewItemName.setBackgroundColor(color);
             return convertView;
         }
     }

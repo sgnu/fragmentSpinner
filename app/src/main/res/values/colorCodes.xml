@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colorCodes">
+        <item name="white">WHITE</item>
+        <item name="magenta">MAGENTA</item>
+        <item name="blue">BLUE</item>
+        <item name="black">BLACK</item>
+        <item name="red">RED</item>
+        <item name="cyan">CYAN</item>
+        <item name="yellow">YELLOW</item>
+        <item name="green">GREEN</item>
+        <item name="maroon">MAROON</item>
+        <item name="purple">PURPLE</item>
+        <item name="olive">OLIVE</item>
+    </string-array>
+</resources>

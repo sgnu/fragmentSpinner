@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colors">
+        <item name="white">Blanco</item>
+        <item name="magenta">Magenta</item>
+        <item name="blue">Azul</item>
+        <item name="black">Negro</item>
+        <item name="red">Rojo</item>
+        <item name="cyan">Cian</item>
+        <item name="yellow">Amarillo</item>
+        <item name="green">Verde</item>
+        <item name="maroon">Granate</item>
+        <item name="purple">Púrpura</item>
+        <item name="olive">Aceituna</item>
+    </string-array>
+</resources>
