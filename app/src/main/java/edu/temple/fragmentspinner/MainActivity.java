@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 findViewById(R.id.text_view_item_name).setBackgroundColor(Color.WHITE);
+                findViewById(R.id.cFrag).setBackgroundColor(adapter.getColor(position));
             }
 
             @Override
@@ -58,6 +59,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Object getItem(int position) {
             return objects[position];
+        }
+
+        public int getColor(int position) {
+            return Color.parseColor((String) getItem(position));
         }
 
         @Override
